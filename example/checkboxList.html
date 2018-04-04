@@ -2,7 +2,7 @@
 <div class="checkbox-list"><span> 
     <button class="btn btn-xs btn-all" ng-click="selectAll()">{{ text.all }}</button></span><span> 
     <button class="btn btn-xs btn-reverse" ng-click="selectReverse()">{{ text.reverse }}</button></span>
-  <li ng-repeat="item in input track by $index" style="list-style-type: none">
+  <li ng-repeat="item in inputLabels track by $index" style="list-style-type: none">
     <div class="checkbox checkbox-item">
       <label><span>
           <input type="checkbox" ng-model="selects[$index]" ng-change="update()" checked="checked"/>{{ item }}</span></label>

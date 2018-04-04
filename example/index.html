@@ -11,12 +11,24 @@
 </head>
 <body>
   <div class='center' ng-controller='testController'>
-    <label>Checkbox list Example: </label>
-    <checkbox-list input='names' output='selectedNames' option='{initSelectAll: true}'>
-    </checkbox-list>
+    <div>
+      <label>Example 1: </label>
+      <checkbox-list input='names' output='selectedNames1' option='{initSelectAll: true}'>
+      </checkbox-list>
 
-    <label>Result: </label>
-    <pre>{{ selectedNames | json }}</pre>
+      <label>Result: </label>
+      <pre>{{ selectedNames1 | json }}</pre>
+    </div>
+
+    <div>
+      <label>Example 2: </label>
+      <checkbox-list input='complexNames' output='selectedNames2' option='{initSelectAll: true}'>
+      </checkbox-list>
+
+      <label>Result: </label>
+      <pre>{{ selectedNames2 | json }}</pre>
+    </div>
+
   </div>
   
 </body>

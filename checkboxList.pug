@@ -3,7 +3,7 @@ div.checkbox-list
     button.btn.btn-xs.btn-all(ng-click='selectAll()') {{ text.all }}
   span 
     button.btn.btn-xs.btn-reverse(ng-click='selectReverse()') {{ text.reverse }}
-  li(ng-repeat='item in input track by $index' style='list-style-type: none')
+  li(ng-repeat='item in inputLabels track by $index' style='list-style-type: none')
     .checkbox.checkbox-item
       label
         span

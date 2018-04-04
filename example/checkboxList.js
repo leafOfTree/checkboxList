@@ -2,6 +2,14 @@ angular.module('checkboxList', [])
 .directive('checkboxList', function () {
     function link(scope, element, attr) {
         function init() {
+            if (!scope.input || !scope.output) {
+                throw new Error('input and output variable should be provided!');
+            }
+            if (scope.input) {
+                scope.inputLabels = scope.input.map(function (_input) {
+                    return _input.label || _input;
+                })
+            }
             scope.selects = {};
 
             if (scope.option && scope.option.initSelectAll) {
@@ -11,13 +19,13 @@ angular.module('checkboxList', [])
         }
 
         scope.update = function () {
-            var output = [];
+            scope.output.length = 0;
             for (var i in scope.selects) {
                 if (scope.selects[i]) {
-                    output.push(scope.input[i]);
+                    var select = scope.input[i];
+                    scope.output.push(select.value || select);
                 }
             }
-            scope.output = output;
         }
 
         scope.selectAll = function () {
@@ -61,7 +69,7 @@ angular.module('checkboxList', [])
 <div class="checkbox-list"><span> 
     <button class="btn btn-xs btn-all" ng-click="selectAll()">{{ text.all }}</button></span><span> 
     <button class="btn btn-xs btn-reverse" ng-click="selectReverse()">{{ text.reverse }}</button></span>
-  <li ng-repeat="item in input track by $index" style="list-style-type: none">
+  <li ng-repeat="item in inputLabels track by $index" style="list-style-type: none">
     <div class="checkbox checkbox-item">
       <label><span>
           <input type="checkbox" ng-model="selects[$index]" ng-change="update()" checked="checked"/>{{ item }}</span></label>
