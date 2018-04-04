@@ -1,12 +1,16 @@
-ul 
-  span {{ text.title }}
+ul.checkbox-list
   span 
-    button(ng-click='selectAll()') {{ text.all }}
+    button.btn-all(ng-click='selectAll()') {{ text.all }}
   span 
-    button(ng-click='selectReverse()') {{ text.reverse }}
+    button.btn-reverse(ng-click='selectReverse()') {{ text.reverse }}
   li(ng-repeat='item in input' style='list-style-type: none')
-    .checkbox
+    .checkbox.checkbox-item
       label
         span
           input(type='checkbox' ng-model='selects[$index]' ng-change='update()' checked='checked')
           | {{ item }}
+
+  style(type='text/css').
+    .checkbox-list .checkbox-item label, input { cursor: pointer; }
+    .checkbox-list button { cursor: pointer; }
+
