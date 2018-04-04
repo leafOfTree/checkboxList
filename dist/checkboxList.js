@@ -49,7 +49,17 @@ angular.module('checkboxList', [])
     return {
         link: link,
         restrict: 'AE',
-        template: `{html}`,
+        template: `
+<ul> <span>{{ text.title }}</span><span> 
+    <button ng-click="selectAll()">{{ text.all }}</button></span><span> 
+    <button ng-click="selectReverse()">{{ text.reverse }}</button></span>
+  <li ng-repeat="item in input" style="list-style-type: none">
+    <div class="checkbox">
+      <label><span>
+          <input type="checkbox" ng-model="selects[$index]" ng-change="update()" checked="checked"/>{{ item }}</span></label>
+    </div>
+  </li>
+</ul>`,
         scope: {
             input: '=',
             output: '=',
