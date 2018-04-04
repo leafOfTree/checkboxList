@@ -1,0 +1,12 @@
+ul 
+  span {{ text.title }}
+  span 
+    button(ng-click='selectAll()') {{ text.all }}
+  span 
+    button(ng-click='selectReverse()') {{ text.reverse }}
+  li(ng-repeat='item in input' style='list-style-type: none')
+    .checkbox
+      label
+        span
+          input(type='checkbox' ng-model='selects[$index]' ng-change='update()' checked='checked')
+          | {{ item }}

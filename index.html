@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+  <script src="./checkbox-list.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  <div class='center' ng-controller='testController'>
+    <label>Checkbox list Example: </label>
+    <checkbox-list input='names' output='selectedNames'>
+    </checkbox-list>
+
+    <label>Result: </label>
+    <pre>{{ selectedNames | json }}</pre>
+  </div>
+  
+</body>
+</html>

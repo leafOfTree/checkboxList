@@ -1,0 +1,22 @@
+{
+  "name": "checkbox-list",
+  "version": "0.0.1",
+  "description": "AngularJS checkbox list plugin.",
+  "main": "checkbox-list.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "chrome http://localhost:1234/index.html && node server.js"
+  },
+  "keywords": [
+    "checkbox",
+    "list",
+    "angularjs"
+  ],
+  "author": "leafOfTree",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
