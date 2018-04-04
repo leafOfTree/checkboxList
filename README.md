@@ -28,5 +28,5 @@ angular.module('yourapp', ['checkboxList'])
 添加 checkboxList.js 到项目中
 
 ```html
-<script src="checkboxList/checkboxList.js"></script>
+<script src="checkboxList/dist/checkboxList.js"></script>
 ```
