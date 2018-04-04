@@ -48,6 +48,7 @@ angular.module('checkboxList', [])
     }
     return {
         link: link,
+        replace: true, 
         restrict: 'AE',
         template: `{html}`,
         scope: {
