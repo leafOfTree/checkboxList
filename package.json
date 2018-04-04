@@ -7,7 +7,6 @@
     "example": "example"
   },
   "scripts": {
-    "test": "chrome http://localhost:1234/index.html && node server.js"
   },
   "keywords": [
     "checkbox",
