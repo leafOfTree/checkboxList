@@ -23,7 +23,7 @@ angular.module('yourapp', ['checkboxList'])
 
 **bower**
 
-    bower install https://github.com/leafOfTree/checkboxList
+    bower install https://github.com/leafOfTree/checkboxList.git
 
 添加 checkboxList.js 到项目中
 
