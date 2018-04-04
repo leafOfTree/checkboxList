@@ -1,7 +1,14 @@
 angular.module('checkboxList', [])
 .directive('checkboxList', function () {
     function link(scope, element, attr) {
-        scope.selects = {}
+        function init() {
+            scope.selects = {};
+
+            if (scope.option && scope.option.initSelectAll) {
+                scope.selectAll();
+            }
+            scope.localize();
+        }
 
         scope.update = function () {
             var output = [];
@@ -44,7 +51,7 @@ angular.module('checkboxList', [])
                 }
             }
         }
-        scope.localize();
+        init();
     }
     return {
         link: link,
@@ -54,7 +61,7 @@ angular.module('checkboxList', [])
         scope: {
             input: '=',
             output: '=',
-            title: '='
+            option: '=',
         }
     }
 })

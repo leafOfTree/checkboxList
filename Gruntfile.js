@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['src/*.js'],
+        files: ['*.js'],
         tasks: ['string-replace'],
         options: {
           livereload: true

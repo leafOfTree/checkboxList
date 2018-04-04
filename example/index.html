@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
+
   <meta charset="UTF-8">
   <title></title>
   <link rel="stylesheet" href="index.css" />
@@ -11,7 +12,7 @@
 <body>
   <div class='center' ng-controller='testController'>
     <label>Checkbox list Example: </label>
-    <checkbox-list input='names' output='selectedNames'>
+    <checkbox-list input='names' output='selectedNames' option='{initSelectAll: true}'>
     </checkbox-list>
 
     <label>Result: </label>

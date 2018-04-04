@@ -1,7 +1,14 @@
 angular.module('checkboxList', [])
 .directive('checkboxList', function () {
     function link(scope, element, attr) {
-        scope.selects = {}
+        function init() {
+            scope.selects = {};
+
+            if (scope.option && scope.option.initSelectAll) {
+                scope.selectAll();
+            }
+            scope.localize();
+        }
 
         scope.update = function () {
             var output = [];
@@ -44,16 +51,17 @@ angular.module('checkboxList', [])
                 }
             }
         }
-        scope.localize();
+        init();
     }
     return {
         link: link,
+        replace: true, 
         restrict: 'AE',
         template: `
-<ul class="checkbox-list"><span> 
-    <button class="btn-all" ng-click="selectAll()">{{ text.all }}</button></span><span> 
-    <button class="btn-reverse" ng-click="selectReverse()">{{ text.reverse }}</button></span>
-  <li ng-repeat="item in input" style="list-style-type: none">
+<div class="checkbox-list"><span> 
+    <button class="btn btn-xs btn-all" ng-click="selectAll()">{{ text.all }}</button></span><span> 
+    <button class="btn btn-xs btn-reverse" ng-click="selectReverse()">{{ text.reverse }}</button></span>
+  <li ng-repeat="item in input track by $index" style="list-style-type: none">
     <div class="checkbox checkbox-item">
       <label><span>
           <input type="checkbox" ng-model="selects[$index]" ng-change="update()" checked="checked"/>{{ item }}</span></label>
@@ -62,12 +70,13 @@ angular.module('checkboxList', [])
   <style type="text/css">
     .checkbox-list .checkbox-item label, input { cursor: pointer; }
     .checkbox-list button { cursor: pointer; }
+    .checkbox-list li { list-style-type: none; }
   </style>
-</ul>`,
+</div>`,
         scope: {
             input: '=',
             output: '=',
-            title: '='
+            option: '=',
         }
     }
 })
