@@ -43,7 +43,7 @@ angular.module('yourapp', ['checkboxList'])
 
 - option
 
-    - initSelectAll: bool(false) 初始默认选中所有
+    - initSelectAll: bool(false) 初始选中所有
 
 ## 测试
 
