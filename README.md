@@ -2,7 +2,7 @@
 
 ## 介绍
 
-输入： 数组类型选项
+输入：数组类型选项
 
 生成：根据数组自动生成 checkbox 列表
 
@@ -43,7 +43,14 @@ angular.module('yourapp', ['checkboxList'])
 
 - option
 
-    - initSelectAll: bool(false) 初始选中所有
+    - initSelectAll: bool(default: false) 初始选中所有
+
+## 开发
+
+    git clone https://github.com/leafOfTree/checkboxList
+    cd checkboxList
+    npm install
+    npm start
 
 ## 测试
 
