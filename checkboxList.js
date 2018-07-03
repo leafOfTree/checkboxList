@@ -14,8 +14,19 @@ angular.module('checkboxList', [])
 
             if (scope.option && scope.option.initSelectAll) {
                 scope.selectAll();
+            } else {
+                initSelects();
             }
             scope.localize();
+        }
+
+        function initSelects() {
+            scope.output.forEach(function (selected) {
+                var outputIndex = scope.inputLabels.indexOf(selected);
+                if (outputIndex !== -1) {
+                    scope.selects[outputIndex] = true;
+                }
+            })
         }
 
         scope.update = function () {
