@@ -77,9 +77,7 @@ angular.module('checkboxList', [])
         replace: true, 
         restrict: 'AE',
         template: `
-<div class="checkbox-list"><span> 
-    <button class="btn btn-xs btn-all" ng-click="selectAll()">{{ text.all }}</button></span><span> 
-    <button class="btn btn-xs btn-reverse" ng-click="selectReverse()">{{ text.reverse }}</button></span>
+<div class="checkbox-list"><span> <a class="btn btn-xs btn-all" ng-click="selectAll()">{{ text.all }}</a></span><span> <a class="btn btn-xs btn-reverse" ng-click="selectReverse()">{{ text.reverse }}</a></span>
   <li ng-repeat="item in inputLabels track by $index" style="list-style-type: none">
     <div class="checkbox checkbox-item">
       <label><span>
@@ -88,7 +86,7 @@ angular.module('checkboxList', [])
   </li>
   <style type="text/css">
     .checkbox-list .checkbox-item label, input { cursor: pointer; }
-    .checkbox-list button { cursor: pointer; }
+    .checkbox-list a { cursor: pointer; }
     .checkbox-list li { list-style-type: none; }
   </style>
 </div>`,
